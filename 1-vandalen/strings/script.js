@@ -2,12 +2,35 @@
 
 window.onload = function(){
 
-	// I denna funktion ska du skriva koden för att hantera "spelet"
+    // converString omvandlar versaler till gemener och vice versa. Bokstaven "a" omvandlas till "#".
 	var convertString = function(str){
-		// Plats för förändring.		
-		// Returnera den konverterade strängen.
-		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
-	
+		var newstring = ""; // Strängen som returneras av denna metod.
+		
+		// Varje bokstav i strängen kollas separat och läggs därefter in i newstring enligt funktionens krav.
+		for(var i = 0; i<str.length; i++){
+		    switch(str.charAt(i)){
+		        //"A" och "a" ersätts med "#".
+		        case 'A':
+		        case 'a':
+		            newstring += "#";
+		        break;
+		        
+		        // Versal ersätts med gemen.
+		        case str.charAt(i).toUpperCase():
+		            newstring += str.charAt(i).toLowerCase();
+		            break;
+		        
+		        // Gemen ersätts med versal.
+		        case str.charAt(i).toLowerCase():
+		            newstring += str.charAt(i).toUpperCase();
+		            break;
+		        
+		        // Övriga tecken påverkas ej, utan skjuts in utan förändring.
+		        default:
+		            newstring += str.charAt(i);
+		    };
+		};
+	    return newstring;
 
 
 
