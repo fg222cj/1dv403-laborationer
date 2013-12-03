@@ -1,0 +1,50 @@
+.console {
+    width:800px;
+    height:500px;
+    background-color:#000;
+    color:#63de00;
+    font-family:Courier, monospace;
+    position:relative;
+}
+
+.log {
+    height:380px;
+}
+
+.input {
+    height:120px;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+textarea {
+    resize:none;
+    border:0;
+    height:8em;
+    width:74%;
+    background-color:#000;
+    color:#63de00;
+    font-family:Courier, monospace;
+    position:absolute;
+    bottom:0;
+    left:190px;
+}
+
+textarea:focus {
+    outline:none;
+    border:0px;
+}
+
+button {
+    background-color:#000;
+    border-color:#63de00;
+    color:#63de00;
+    position:absolute;
+    bottom:5em;
+}
+
+.prompt {
+    position:absolute;
+    bottom:4.8em;
+}

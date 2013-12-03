@@ -9,7 +9,7 @@ window.onload = function(){
 		
 		// 
 		if(parts.length != 3 || isNaN(parts[0]) || isNaN(parts[1]) || isNaN(parts[2])) {
-		    throw "Felaktigt format på datumet!";
+		    throw new Error("Felaktigt format på datumet!");
 		}
         var year = parts[0];
         var month = parts[1] - 1; // Månad i ett Date-objekt börjar på 0 och slutar på 11, måste därför räknas ner med 1.
