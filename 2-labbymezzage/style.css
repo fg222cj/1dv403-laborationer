@@ -1,21 +1,13 @@
-.console {
-    width:800px;
-    height:500px;
-    background-color:#000;
-    color:#63de00;
-    font-family:Courier, monospace;
-    position:relative;
+a {
+    color:#b3b3b3;
 }
 
-.log {
-    height:380px;
+a:visited {
+    color:#b3b3b3;
 }
 
-.input {
-    height:120px;
-    position:absolute;
-    bottom:0;
-    width:100%;
+a:active {
+    color:#b3b3b3;
 }
 
 textarea {
@@ -44,7 +36,64 @@ button {
     bottom:5em;
 }
 
+.console {
+    width:800px;
+    height:500px;
+    background-color:#000;
+    color:#63de00;
+    font-family:Courier, monospace;
+    position:relative;
+}
+
+#log {
+    position:absolute;
+    bottom:120px;
+    max-height:380px;
+    width:100%;
+    overflow-y:auto;
+}
+
+.messageBox {
+    width:100%;
+}
+
+.messageBox p {
+    display:inline;
+    -webkit-margin-before:0;
+    -webkit-margin-after:0;
+}
+
+.messageBox p:first-child {
+    width:70%;
+    float:left;
+}
+
+.messageBox p:nth-child(2) {
+    width:20%;
+}
+
+.messageBox a {
+    float:right;
+    margin-right:15px;
+}
+
+.clear {
+    clear:both;
+}
+
+.input {
+    height:120px;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
 .prompt {
     position:absolute;
     bottom:4.8em;
+}
+
+#numberOfCommands {
+    position:absolute;
+    bottom:2em;
 }

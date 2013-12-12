@@ -3,13 +3,13 @@ var RandomGenerator = {
 	/*
 		Denna metod tar antalet rader och columner som inparameter.
 		
-		Metoden returnerar en array innehållandes utslumpade tal mellan 1 och (rows*cols)/2. Varje tal representeras två
-		gånger och motsvarar således en spelbricka. 
+		Metoden returnerar en array innehï¿½llandes utslumpade tal mellan 1 och (rows*cols)/2. Varje tal representeras tvï¿½
+		gï¿½nger och motsvarar sï¿½ledes en spelbricka. 
 		
-		I en 4*4 matris kan Arrayen t.ex. se ut så här:
+		I en 4*4 matris kan Arrayen t.ex. se ut sï¿½ hï¿½r:
 		[1,2,6,8,6,2,5,3,1,3,7,5,8,4,4,7]
 		
-		I en 2*4 matris kan Arrayen t.ex. se ut så här:				
+		I en 2*4 matris kan Arrayen t.ex. se ut sï¿½ hï¿½r:				
 		[3,4,4,1,2,1,2,3]
 	*/
 	
@@ -31,6 +31,9 @@ var RandomGenerator = {
 			
 			do
 			{
+				// byta ut if mot while hÃ¤r fÃ¶r att effektivisera kanske?
+				// Hade inte det bÃ¤sta varit att trycka in vÃ¤rden i arrayet i ordning och sen blanda det? Om det gÃ¥r pÃ¥ nÃ¥t bra sÃ¤tt?
+				// http://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array-in-javascript
 				if(imageOneOK == false)
 				{
 					var randomOne = Math.floor( (Math.random() * (rows*cols-0) + 0) );				
@@ -42,6 +45,7 @@ var RandomGenerator = {
 					}
 				}
 				
+				// byte ut if mot while hÃ¤r fÃ¶r att effektivisera kanske?
 				if(imageTwoOK == false)
 				{
 					var randomTwo = Math.floor( (Math.random() * (rows*cols-0) + 0) );				
