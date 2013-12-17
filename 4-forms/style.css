@@ -1,0 +1,35 @@
+label, input, select, button {
+    float:left;
+}
+
+label, button {
+    clear:left;
+}
+
+#firstName {
+    margin-left:25px;
+}
+
+#lastName {
+    margin-left:18px;
+}
+
+#zipCode {
+    margin-left:4px;
+}
+
+#email {
+    margin-left:38px;
+}
+
+#paymentPlan {
+    margin-left:16px;
+}
+
+.valid {
+    background-color:green;
+}
+
+.invalid {
+    background-color:red;
+}
