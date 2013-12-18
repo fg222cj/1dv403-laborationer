@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="wrapper">
-    <form>
+    <form id="orderForm" method="post" action="http://voyager.lnu.se/tekinet/kurser/dtt/wp_webbteknik/process_form.php">
         <fieldset>
             <label for="firstName">Förnamn:</label>
             <input type="text" name="firstName" id="firstName">
@@ -18,13 +18,14 @@
             <input type="text" name="zipCode" id="zipCode">
             <label for="email">E-post:</label>
             <input type="email" name="email" id="email">
-            <label for="paymentPlan">Prismodell:</label>
-            <select name="paymentPlan" id="paymentPlan">
-                <option value="low">Låg</option>
-                <option value="medium">Mellan</option>
-                <option value="high">Hög</option>
+            <label for="paymentPlanSelect">Prismodell:</label>
+            <select name="paymentPlanSelect" id="paymentPlanSelect">
+                <option value="låg">Låg</option>
+                <option value="mellan">Mellan</option>
+                <option value="hög">Hög</option>
             </select>
-            <button type="submit">Skicka</button>
+            <input type="hidden" name="paymentPlan">
+            <input type="submit" id="buttonOrderFormSubmit">
         </fieldset>
     </form>
     </div>
