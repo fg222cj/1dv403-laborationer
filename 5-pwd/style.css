@@ -1,0 +1,19 @@
+body {
+    height:800px;
+}
+
+#main {
+    background-color:blue;
+    height:90%;
+    min-height:90%;
+}
+
+#activity-bar {
+    background-color:green;
+    height:10%;
+    min-height:10%;
+    filter:alpha(opacity=30);
+    -moz-opacity:0.3;
+    -khtml-opacity:0.3;
+    opacity:0.3;
+}
