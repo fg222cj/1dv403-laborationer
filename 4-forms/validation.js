@@ -10,30 +10,40 @@ window.onload = function() {
     // onblur-events. En för varje input som ska valideras.
     // Varje funktion behöver definiera två saker; Ett reguljärt uttryck (regex) som värdet i
     // input ska testas mot, samt ett felmeddelande (errorMessage) om inputen inte validerar.
-    firstNameField.onblur = function() {
-        var regexp = /^[a-zA-Z0-9åäöÅÄÖ]+$/; // Ej blank eller blanksteg
+    firstNameField.onblur = validateFirstNameField;
+    
+    lastNameField.onblur = validateLastNameField;
+    
+    zipCodeField.onblur = validateZipCodeField;
+    
+    emailField.onblur = validateEmailField;
+    
+    function validateFirstNameField() {
+        var regexp = /^[a-zA-Z0-9åäöÅÄÖ\-]+$/; // Ej blank eller blanksteg
         var errorMessage = "Du måste fylla i ett förnamn!";
-        validateField(firstNameField, regexp, errorMessage);
+        return validateField(firstNameField, regexp, errorMessage);
     };
     
-    lastNameField.onblur = function() {
-        var regexp = /^[a-zA-Z0-9åäöÅÄÖ]+$/; // Ej blank eller blanksteg
+    function validateLastNameField() {
+        var regexp = /^[a-zA-Z0-9åäöÅÄÖ\-]+$/; // Ej blank eller blanksteg
         var errorMessage = "Du måste fylla i ett efternamn!";
-        validateField(lastNameField, regexp, errorMessage);
+        return validateField(lastNameField, regexp, errorMessage);
     };
     
-    zipCodeField.onblur = function() {
-        var regexp = /^(SE)*\s*\d{3}[\ \-]*\d{2}$/;
+    function validateZipCodeField() {
+        var regexp = /^(SE)*\ *\d{3}[\ \-]*\d{2}$/;
         var errorMessage = "Postnumret måste innehålla 5 siffror!";
         if(validateField(zipCodeField, regexp, errorMessage)) {
             zipCodeField.value = zipCodeField.value.replace(/\D/g, "");
+            return true;
         }
+        return false;
     };
     
-    emailField.onblur = function() {
-        var regexp = /^[a-zA-Z0-9åäöÅÄÖ]+@[a-zA-Z0-9åäöÅÄÖ\.]+[\.]{1}[a-zA-Z]{2,4}$/; // Svaghet: Man kan inte ange en ip-adress som domännamn.
+    function validateEmailField() {
+        var regexp = /^[a-zA-Z0-9åäöÅÄÖ]+@[a-zA-Z0-9åäöÅÄÖ\.]+\.[a-zA-Z]{2,4}$/; // Svaghet: Man kan inte ange en ip-adress som domännamn.
         var errorMessage = "Du måste fylla i en korrekt e-postadress!";
-        validateField(emailField, regexp, errorMessage);
+        return validateField(emailField, regexp, errorMessage);
     };
     
     // EFtersom det inte går att sätta en select till readonly får den istället attributet disabled.
@@ -44,7 +54,12 @@ window.onload = function() {
     }
     
     // Fångar submit och skapar popupfönster.
-    document.getElementById("buttonOrderFormSubmit").onclick = createPopup;
+    document.getElementById("buttonOrderFormSubmit").onclick = function() {
+        if(validateFirstNameField() && validateLastNameField() && validateZipCodeField() && validateEmailField()) {
+            createPopup();
+        }
+        return false;
+    }
     
     // Funktion för att presentera lyckad validering
     function toggleValid(element) {
