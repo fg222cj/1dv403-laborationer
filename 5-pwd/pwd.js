@@ -11,7 +11,7 @@ var pwd = {
     
     // loadApp startar en app baserat på det app-id den tar emot.
     loadApp: function(appId) {
-    	var app = new window[appId];
+    	var app = new applications[appId];
     	
     	var appWindow = document.createElement("div");
     	appWindow.setAttribute("class", "app-window");
@@ -20,13 +20,12 @@ var pwd = {
     	statusBar.setAttribute("class", "app-window-status-bar");
     	appWindow.appendChild(statusBar);
     	
-    	//var appName = document.createElement("p");
     	var appIcon = document.createElement("img");
     	appIcon.setAttribute("src", app.icon);
     	appIcon.setAttribute("class", "app-icon");
     	statusBar.appendChild(appIcon);
+    	
     	statusBar.innerHTML += app.name;
-    	//statusBar.appendChild(appName);
     	
     	var closeWindowButtonAnchor = document.createElement("a");
     	closeWindowButtonAnchor.setAttribute("class", "app-window-status-bar-button");
@@ -45,5 +44,6 @@ var pwd = {
     
 }
 
+var applications = {};
 
 window.onload = pwd.init;
