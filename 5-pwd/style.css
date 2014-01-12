@@ -39,8 +39,9 @@ img.app-icon {
 	top:100px;
 	left:150px;
 	height:400px;
-	width:300px;
+	width:450px;
 	background-color:#bfbfbf;
+    overflow:scroll;
 }
 
 .app-window-status-bar {
@@ -57,4 +58,23 @@ img.app-icon {
 .app-window-status-bar-button img {
 	height:20px;
 	margin-top:3px;
+}
+
+.app-window-content {
+    height:375px;
+    width:95%;
+    margin:0 auto;
+    text-align:center;
+}
+
+.thumbnail-anchor {
+    display:inline-block;
+    text-align:center;
+    margin:5px;
+    padding:5px;
+    background-color:#6a6a6a;
+}
+
+.thumbnail-anchor img {
+    vertical-align:middle;
 }

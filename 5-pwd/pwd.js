@@ -11,16 +11,19 @@ var pwd = {
     
     // loadApp startar en app baserat på det app-id den tar emot.
     loadApp: function(appId) {
-        var appWindowContent = document.createElement("div");
-    	var app = new applications[appId](appWindowContent);
-    	
-    	var appWindow = document.createElement("div");
+        var appWindow = document.createElement("div");
     	appWindow.setAttribute("class", "app-window");
-    	
+    	document.getElementById("main").appendChild(appWindow);
+        
     	var statusBar = document.createElement("div");
     	statusBar.setAttribute("class", "app-window-status-bar");
     	appWindow.appendChild(statusBar);
+        
+        var appWindowContent = document.createElement("div");
+        appWindowContent.setAttribute("class", "app-window-content");
         appWindow.appendChild(appWindowContent);
+        
+    	var app = new applications[appId](appWindowContent, appWindowContent.offsetWidth);
     	
     	var appIcon = document.createElement("img");
     	appIcon.setAttribute("src", app.icon);
@@ -40,8 +43,6 @@ var pwd = {
     	var closeWindowButtonImage = document.createElement("img");
     	closeWindowButtonImage.setAttribute("src", "images/closeButton.png")
     	closeWindowButtonAnchor.appendChild(closeWindowButtonImage);
-    	
-    	document.getElementById("main").appendChild(appWindow);
     }
     
 }
