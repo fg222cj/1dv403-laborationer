@@ -11,7 +11,8 @@ var pwd = {
     
     // loadApp startar en app baserat på det app-id den tar emot.
     loadApp: function(appId) {
-    	var app = new applications[appId];
+        var appWindowContent = document.createElement("div");
+    	var app = new applications[appId](appWindowContent);
     	
     	var appWindow = document.createElement("div");
     	appWindow.setAttribute("class", "app-window");
@@ -19,6 +20,7 @@ var pwd = {
     	var statusBar = document.createElement("div");
     	statusBar.setAttribute("class", "app-window-status-bar");
     	appWindow.appendChild(statusBar);
+        appWindow.appendChild(appWindowContent);
     	
     	var appIcon = document.createElement("img");
     	appIcon.setAttribute("src", app.icon);
