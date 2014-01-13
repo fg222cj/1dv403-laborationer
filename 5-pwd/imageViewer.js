@@ -1,3 +1,5 @@
+"use strict";
+
 applications.imageViewer = function imageViewer(contentWindow, contentWindowWidth) {
 	this.name = "Image Viewer";
 	this.icon = "images/imageViewerIcon.png";
@@ -22,21 +24,13 @@ applications.imageViewer = function imageViewer(contentWindow, contentWindowWidt
             }
         }
         
-        var thumbSideLength = 0;    // divarna som tumnaglarna ligger i ska vara kvadratiska, därför tar vi den högsta av maxThumbWidth och maxThumbHeight.
-        if(maxThumbWidth > maxThumbHeight) {
-            thumbSideLength = maxThumbWidth;
-        }
-        else {
-            thumbSideLength = maxThumbHeight;
-        }
-        
         for(var i = 0; i < pictures.length; i += 1) {
             var thumbAnchor = document.createElement("a");
             thumbAnchor.setAttribute("class", "thumbnail-anchor");
             thumbAnchor.setAttribute("href", pictures[i].URL);
-            thumbAnchor.style.width = thumbSideLength + "px";
-            thumbAnchor.style.height = thumbSideLength + "px";
-            thumbAnchor.style.lineHeight = thumbSideLength + "px";
+            thumbAnchor.style.width = maxThumbWidth + "px";
+            thumbAnchor.style.height = maxThumbHeight + "px";
+            thumbAnchor.style.lineHeight = maxThumbHeight-5 + "px";
             thumbAnchor.onclick = function() {
                 document.getElementsByTagName("body")[0].style.background = "url(" + this.href + ") no-repeat center center fixed";
                 return false;

@@ -1,4 +1,5 @@
 "use strict";
+
 var pwd = {
     
     // init länkar alla app-ikoner till sina respektive appar genom att baserat på deras id tilldela dem ett app-id som de sedan är länkade till.
@@ -30,7 +31,11 @@ var pwd = {
     	appIcon.setAttribute("class", "app-icon");
     	statusBar.appendChild(appIcon);
     	
-    	statusBar.innerHTML += app.name;
+        //var appTitle = document.createElement("h4");
+        //appTitle.setAttribute("class", "app-title");
+    	//appTitle.innerHTML = app.name;
+        //statusBar.appendChild(appTitle);
+        statusBar.innerHTML += app.name;
     	
     	var closeWindowButtonAnchor = document.createElement("a");
     	closeWindowButtonAnchor.setAttribute("class", "app-window-status-bar-button");

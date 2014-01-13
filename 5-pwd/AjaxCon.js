@@ -1,4 +1,6 @@
-﻿function AjaxCon(url, callback) {
+﻿"use strict";
+
+function AjaxCon(url, callback) {
     var READY_STATE_UNINITIALIZED = 0;
     var READY_STATE_OPENED = 1;
     var READY_STATE_SENT = 2;
