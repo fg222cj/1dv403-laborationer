@@ -80,11 +80,6 @@ body {
     top:3px;
 }
 
-.app-window-content img#ajax-loader {
-    vertical-align:middle;
-    margin:auto;
-}
-
 .thumbnail-anchor {
     display:inline-block;
     text-align:center;
