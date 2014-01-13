@@ -28,6 +28,7 @@ function AjaxCon(url, callback) {
     //xhr.setRequestHeader('IF-Modified-Since', 'Mon, 01 Sep 2007 00:00:00 GMT');
     
     xhr.send(null);
+    callback("loading data");
 }
 
 AjaxCon.prototype.getXHR = function() {
